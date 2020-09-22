@@ -1,11 +1,12 @@
-# MODEL SPARK APPLICATION
+# MULTIPLE REPARTITIONING test
 
-This represents how a spark application has to be structured and created for high-performance production environments.
+Going to launch multiple repartition commands against cluster to check time constraints and measure skewness of resultant partitions.
 
 
 ## Highlights:
 
-* 'Jobs' and 'Tests' separately submittable
-* object-oriented components
-* easily testable
-* CI/CD ready - integrated with Travis-CI or Circle-CI
+* Populate data from test input file
+* Repartition the RDD over cluster of executors
+* Check skewness against multiple partition keys
+* Focus is also on running some automated tests later
+* Also measure run-times

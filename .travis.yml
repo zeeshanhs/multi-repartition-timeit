@@ -1,0 +1,21 @@
+sudo: required
+language: bash
+
+services:
+  - docker
+
+env:
+  - SPARK_VERSION=2.4.5
+
+before_script:
+  - env | grep TRAVIS_ > travis.env
+  - echo "CI_NAME=travis_ci" >> travis.env
+  - echo "CI=true" >> travis.env
+  - echo "TRAVIS=true" >> travis.env
+  - echo "CONTINUOUS_INTEGRATION=true" >> travis.env
+  - echo "DEBIAN_FRONTEND=noninteractive" >> travis.env
+  - echo "HAS_JOSH_K_SEAL_OF_APPROVAL" >> travis.env
+  - echo $SPARK_VERSION >> travis.env
+
+script:
+  - docker run --env-file travis.env -v $(pwd):/opt/src --rm --workdir="/opt/mysrc" $SPARK_VERSION ./jobs/repart-test-1.py
