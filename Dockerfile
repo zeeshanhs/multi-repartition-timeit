@@ -54,4 +54,9 @@ RUN ls -la
 
 RUN ls -la ./spark-2.4.7-bin-hadoop2.7/bin
 
-CMD ["./spark-2.4.7-bin-hadoop2.7/bin/spark-shell"]
+WORKDIR /opt/spark-2.4.7-bin-hadoop2.7/bin
+
+RUN ls -la
+
+# CMD ["./spark-2.4.7-bin-hadoop2.7/bin/spark-shell"]
+CMD ["spark-shell"]
