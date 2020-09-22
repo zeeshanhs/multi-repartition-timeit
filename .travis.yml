@@ -27,6 +27,6 @@ before_script:
 
 script:
   - docker build -t includes/sparklet:$SPARK_VERSION .
-  - docker run --env-file travis.env -v $(pwd):/opt/src --workdir="/opt/src" --rm includes/sparklet:$SPARK_VERSION printenv
+  - docker run --env-file travis.env -v $(pwd):/opt/src --workdir="/opt/src" --rm includes/sparklet:$SPARK_VERSION printenv ./jobs/repart-test-1.py
 
 
