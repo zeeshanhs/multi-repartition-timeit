@@ -26,7 +26,7 @@ RUN \
   apk update --update && \
   # grab curl and ssh
   apk add --update openssh vim curl procps && \
-  curl -L https://www.apache.org/dyn/closer.lua?path=spark/spark-2.4.7/spark-2.4.7-bin-hadoop2.7.tgz > spark.tgz && \
+  curl -L https://apache.mirror.gtcomm.net/spark/spark-2.4.7/spark-2.4.7-bin-hadoop2.7.tgz > spark.tgz && \
   # generate a keypair and authorize it
   mkdir -p /root/.ssh && \
   ssh-keygen -f /root/.ssh/id_rsa -N "" && \
