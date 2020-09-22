@@ -50,11 +50,12 @@ ENV PATH /spark-2.4.7-bin-hadoop2.7/bin:$PATH
 
 ENTRYPOINT [ "/init" ]
 
-RUN ls -la
+# RUN ls -la
+# RUN ls -la ./spark-2.4.7-bin-hadoop2.7/bin
+# WORKDIR /opt/spark-2.4.7-bin-hadoop2.7/bin
+# RUN ls -la
 
-RUN ls -la ./spark-2.4.7-bin-hadoop2.7/bin
-
-WORKDIR /opt/spark-2.4.7-bin-hadoop2.7/bin
+COPY . .
 
 RUN ls -la
 
