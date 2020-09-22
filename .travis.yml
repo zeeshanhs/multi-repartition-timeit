@@ -19,7 +19,7 @@ before_script:
 
 script:
   - docker build -t includes/sparklet:$SPARK_VERSION .
-  - docker run --env-file travis.env -v $(pwd):/opt/src --rm --workdir="/opt/mysrc" includes/sparklet:$SPARK_VERSION ./jobs/repart-test-1.py
+  - docker run --env-file travis.env -v $(pwd):/opt/src --rm --workdir="/opt/mysrc" includes/sparklet:$SPARK_VERSION
 
 
 notifications:
