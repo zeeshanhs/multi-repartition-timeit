@@ -50,4 +50,6 @@ ENV PATH /spark-2.4.7-bin-hadoop2.7/bin:$PATH
 
 ENTRYPOINT [ "/init" ]
 
+RUN ls -la
+
 CMD ["spark-shell"]
