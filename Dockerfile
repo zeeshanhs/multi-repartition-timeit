@@ -54,4 +54,4 @@ RUN ls -la
 
 RUN ls -la ./spark-2.4.7-bin-hadoop2.7/bin
 
-CMD ["spark-shell"]
+CMD ["./spark-2.4.7-bin-hadoop2.7/bin/spark-shell"]
