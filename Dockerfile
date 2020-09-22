@@ -26,7 +26,7 @@ RUN \
   apk update --update && \
   # grab curl and ssh
   apk add --update openssh vim curl procps && \
-  curl -L http://apache.mirror.gtcomm.net/spark/spark-2.4.5/spark-2.4.5-bin-hadoop2.6.tgz > spark.tgz && \
+  curl -L https://downloads.apache.org/spark/spark-2.4.7/spark-2.4.7-bin-hadoop2.6.tgz > spark.tgz && \
   # generate a keypair and authorize it
   mkdir -p /root/.ssh && \
   ssh-keygen -f /root/.ssh/id_rsa -N "" && \
@@ -46,7 +46,7 @@ ADD includes/services/spark-master-run /etc/services.d/spark-master/run
 ADD includes/services/spark-slave-run /etc/services.d/spark-slave/run
 ADD includes/services/spark-slave2-run /etc/services.d/spark-slave2/run
 
-ENV PATH /opt/spark-2.4.5-bin-hadoop2.6/bin:$PATH
+ENV PATH /spark-2.4.7-bin-hadoop2.6/bin:$PATH
 
 ENTRYPOINT [ "/init" ]
 
