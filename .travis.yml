@@ -19,3 +19,11 @@ before_script:
 
 script:
   - docker run --env-file travis.env -v $(pwd):/opt/src --rm --workdir="/opt/mysrc" $SPARK_VERSION ./jobs/repart-test-1.py
+
+
+notifications:
+email:
+  recipients:
+    - blue_tie@hotmail.com
+  on_success: never
+  on_failure: never
