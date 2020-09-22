@@ -4,6 +4,14 @@ language: bash
 services:
   - docker
 
+notifications:
+  email:
+    recipients:
+      - blue_tie@hotmail.com
+    on_success: never
+    on_failure: never
+
+
 env:
   - SPARK_VERSION=2.4.7
 
@@ -22,9 +30,3 @@ script:
   - docker run --env-file travis.env -v $(pwd):/opt/src --rm --workdir="/opt/mysrc" includes/sparklet:$SPARK_VERSION
 
 
-notifications:
-email:
-  recipients:
-    - blue_tie@hotmail.com
-  on_success: never
-  on_failure: never

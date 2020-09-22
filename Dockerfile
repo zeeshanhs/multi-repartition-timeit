@@ -52,6 +52,6 @@ ENTRYPOINT [ "/init" ]
 
 RUN ls -la
 
-RUN ls -la /spark-2.4.7-bin-hadoop2.7
+RUN ls -la ./spark-2.4.7-bin-hadoop2.7/bin
 
 CMD ["spark-shell"]
