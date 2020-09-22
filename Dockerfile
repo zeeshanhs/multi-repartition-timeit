@@ -59,4 +59,4 @@ WORKDIR /opt/spark-2.4.7-bin-hadoop2.7/bin
 RUN ls -la
 
 # CMD ["./spark-2.4.7-bin-hadoop2.7/bin/spark-shell"]
-CMD ["spark-shell"]
+CMD ["pyspark"]
